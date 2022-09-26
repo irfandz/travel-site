@@ -10,6 +10,7 @@
 *~
 *.sass-cache
 node_modules/
+node-experiment/
 .tmp/
 
 # OS or Editor folders
