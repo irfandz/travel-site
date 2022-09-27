@@ -13,23 +13,61 @@
     &__title {
         font-weight: 300;
         color: $mainBlue;
-        font-size: 4.8rem;
+        font-size: 2rem;
         margin: 0;
+
+        @mixin atSmall {
+            font-size: 2.2rem;
+        }
+
+        @mixin atMedium {
+            font-size: 3.2rem;
+        }
+
+        @mixin atLarge {
+            font-size: 4.8rem;
+        }
     }
     
     &__subtitle {
         font-weight: 300;
         color: $mainBlue;
-        font-size: 2.9rem;
+        font-size: 1.5rem;
         margin: 0;
+
+        @mixin atSmall {
+            font-size: 1.875rem;
+        }
+
+        @mixin atMedium {
+            font-size: 2rem;
+        }
+
+        @mixin atLarge {
+            font-size: 2.9rem;
+        }
     }
     &__description {
         color: #fff;
-        font-size: 1.875rem;
+        font-size: 0.875rem;
         font-weight: 200;
         text-shadow: 1px 2px 1px rgba(0, 0, 0, .1);
-        max-width: 30rem;
-        margin: 1.875rem auto;
+        max-width: 15rem;
+        margin: 0.875rem auto;
+
+        @mixin atSmall {
+            font-size: 1.5rem;
+        }
+
+        @mixin atMedium {
+            font-size: 2rem;
+            max-width: 30rem;
+        }
+
+        @mixin atLarge {
+            font-size: 1.875rem;
+            max-width: 30rem;
+        }
     }
 }
 
