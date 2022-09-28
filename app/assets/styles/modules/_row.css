@@ -2,7 +2,15 @@
 
     @mixin clearfix;
 
+    &__b-margin-until-medium {
+        margin-bottom: 2rem;
+    }
+
     @mixin atMedium {
+        &__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+
         &__gutters {
             padding-right: -65px;
         }
@@ -28,5 +36,6 @@
         &__medium-8--smaller {
             width: 63%;
         }
+
     }
 }
