@@ -17,5 +17,27 @@
     &__b-margin {
         margin-bottom: 3.8rem;
     }
+
+    &__no-padding-until-large {
+        padding-left: 0;
+        padding-right: 0;
+
+        @mixin atLarge {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
+    /* &__balance-padding-at-medium {
+
+        @mixin atMedium {
+            margin-right: -65px;
+        }
+
+        @mixin atLarge {
+            padding: 0 18px;
+            margin: 0 auto;
+        }
+    } */
 }
 
