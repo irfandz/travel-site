@@ -37,11 +37,11 @@
     }
 
     &__menu-content {
-        opacity: 0;
-        transform: scale(1.2);
+        opacity: 0; /* Hide menu item withn styling, not real hide html element  */
+        transform: scale(1.2); /* add zoom-like effect when ease out */
         transition: all .5s ease-out;
         position: relative;
-        z-index: -10;
+        z-index: -10; /* send __menu-content to back to prevent accidentally click */
         padding-top: 100px;
         text-align: center;
 
@@ -60,21 +60,83 @@
     }
 
     &__menu-icon {
-        width: 20px;
-        height: 20px;
-        background-color: #fff;
+        border: 1px solid #fff; /* add border around hamburger menu */
+        border-radius: 10%; /* give border radius on border */
+        width: 3rem; /* width the border box */
+        height: 2.75rem; /* height the border box */
         position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 2;
+        top: 1rem;
+        right: 1rem;
+        z-index: 2; /* move __menu-icon to top of the content */
+        transition: all .5s ease-in; /* give transition */
+
+        &::before { /* 1st hamburger's line */
+            content: "";
+            position: absolute;
+            top: 0.55rem;
+            right: 0.42rem;
+            width: 2rem;
+            height: 0.1875rem;
+            background-color: #fff;
+            transform-origin: 0 0;
+            transition: transform .3s ease-out;
+        }
+
+        &__middle { /* 2nd hamburger's line */
+            position: absolute;
+            top: 1.242rem;
+            right: 0.42rem;
+            width: 2rem;
+            height: 0.1875rem;
+            background-color: #fff;
+            transition: all .3s ease-out; /* and transistion in middle line hamburger */
+            transform-origin: 0 100%; /* set start point transform from left to 100% */
+        }
+
+        &::after { /* 3nd hamburger's line */
+            content: "";
+            position: absolute;
+            top: 1.875rem;
+            right: 0.42rem;
+            width: 2rem;
+            height: 0.1875rem;
+            background-color: #fff;
+            transform-origin: 0 100%;
+            transition: transform .3s ease-out;
+        }
 
         @mixin atMedium {
             display: none;
         }
     }
 
+    &__menu-icon--close-x { /* styling menu icon when close-x is active */
+        background-color: rgba(#fff, .5);
+
+        &::before {
+            transform: translateX(0.5px) rotate(42deg) scaleX(1.20) translateY(-1.5px); /* transform first hamburger's line into cross 42 deg */
+            height: 0.220rem;
+            width: 1.8rem;
+            background-color: $mainBlue;
+        }
+
+        .site-header__menu-icon__middle {
+            opacity: 0; /* hide middle hamburger line */
+            transform: scaleX(0);
+        }
+
+        &::after {
+            transform: translateX(0.5px) rotate(-44deg) scaleX(1.20) translateY(1.5px); /* transform first hamburger's line into cross -42 deg */
+            height: 0.220rem;
+            width: 1.8rem;
+            background-color: $mainBlue;
+        }
+
+    }
+
     &--is-expanded {
         background-color: rgba($mainBlue, .55);
+        backdrop-filter: blur(3px); /* add bluer effect to menu background */
     }
 
 }
