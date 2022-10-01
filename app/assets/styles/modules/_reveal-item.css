@@ -1,0 +1,12 @@
+.reveal-item {
+    /* default opacity in reveal-item set to 0, that hide element with styling*/
+    opacity: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    transform: scale(1.15);
+
+    &--is-visible {
+        /* when event was triggered, set opacity back to 1 */
+        opacity: 1;
+        transform: scale(1);
+    }
+}
