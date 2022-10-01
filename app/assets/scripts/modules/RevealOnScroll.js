@@ -13,7 +13,7 @@ class RevealOnScroll {
     constructor(els, tresholdPercent){
         /* create object property itemsToReveal and select all element that matched by class .feature-item */
         this.itemsToReveal = els;
-        this.tresholdPercent = this.tresholdPercent;
+        this.tresholdPercent = tresholdPercent;
         /* this line will minimize usage of ask browser height, by saving it into memory (constructor property) */
         this.browserHeight = window.innerHeight;
         /* call hideInitially() */
@@ -56,7 +56,7 @@ class RevealOnScroll {
             /* getBoundingClientRect().top : take that bounding rectangle number and then device by the height of the browser window*/
             let scrollPercent = (el.getBoundingClientRect().top / this.browserHeight) * 100;
             /* only if scrollPercent < this.tresholdPercent, add reveal-item--is-visible and set isRevealed true*/
-            if (scrollPercent < 60) {
+            if (scrollPercent < this.tresholdPercent) {
                 el.classList.add("reveal-item--is-visible");
                 el.isRevealed = true;
                 /* if itemsToReveal value of isLastItem == true, remove event listener scroll & scrollThrottle */
