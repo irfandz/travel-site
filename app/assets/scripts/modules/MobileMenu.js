@@ -12,7 +12,15 @@ class MobileMenu{
     /* from menuIcon property we call addEventListerner("event that want to listen", response to that click) */ 
     /*  */
     events(){
-        this.menuIcon.addEventListener("click", () => this.toggleTheMenu())
+        this.menuIcon.addEventListener("click", () => this.toggleTheMenu());
+        /* pushes esc to close  */
+        document.addEventListener("keyup", e => this.keyPressHandler(e));
+    }
+
+    keyPressHandler(e) {
+        if (e.keyCode == 27) {
+            this.toggleTheMenu();
+        }
     }
 
     /* toggleThemenu() method to add element when menuIcon was clicked */
