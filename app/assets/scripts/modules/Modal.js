@@ -3,7 +3,7 @@ class Modal {
         this.injectHTML();
         this.modal = document.querySelector(".modal");
         this.closeIcon = document.querySelector(".modal__close");
-        this.openModalButtons = document.querySelectorAll(".open-modal");
+        /* this.openModalButtons = document.querySelectorAll(".open-modal");  */
         this.events();
     }
 
@@ -14,9 +14,11 @@ class Modal {
                 this.openTheModal(e);
             });
         });
+
+        this.openModalButtons.forEach(el => el.addEventListener("click", e => this.openTheModal(e))); << no need anymore when we use code splitting
         */
 
-        this.openModalButtons.forEach(el => el.addEventListener("click", e => this.openTheModal(e)));
+
 
         /* Listen for close click */
         this.closeIcon.addEventListener("click", () => this.closeTheModal())
@@ -31,8 +33,8 @@ class Modal {
         }
     }
 
-    openTheModal(e) {
-        e.preventDefault();
+    openTheModal() {
+        // e.preventDefault();
         this.modal.classList.add("modal__is-visible");
 
     }
