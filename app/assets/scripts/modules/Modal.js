@@ -21,7 +21,7 @@ class Modal {
 
 
         /* Listen for close click */
-        this.closeIcon.addEventListener("click", () => this.closeTheModal())
+        this.closeIcon.addEventListener("click", () => this.closeTheModal());
 
         /* pushes any key  */
         document.addEventListener("keyup", e => this.keyPressHandler(e));

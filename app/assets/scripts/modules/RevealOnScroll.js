@@ -61,7 +61,7 @@ class RevealOnScroll {
                 el.isRevealed = true;
                 /* if itemsToReveal value of isLastItem == true, remove event listener scroll & scrollThrottle */
                 if (el.isLastItem) {
-                    window.removeEventListener("scroll", this.scrollThrottle)
+                    window.removeEventListener("scroll", this.scrollThrottle);
                 }
             }
         }
@@ -71,7 +71,7 @@ class RevealOnScroll {
         /* for each itemsToReveal in array, add class reveal-item beside class .feature-item */
         /* then set isRevealed to false */
         this.itemsToReveal.forEach(el => {
-            el.classList.add("reveal-item")
+            el.classList.add("reveal-item");
             el.isRevealed = false;
         });
         /* count length of itemsToReveal array with calling length, 

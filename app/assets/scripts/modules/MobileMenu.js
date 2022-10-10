@@ -2,9 +2,9 @@ class MobileMenu{
     constructor(){
         /* Avoid Spaghetti code by creating each object property*/
         /* document.querySelector() only select the first element that matched by class .site-header__menu-icon*/
-        this.menuIcon = document.querySelector(".site-header__menu-icon")
-        this.menuContent = document.querySelector(".site-header__menu-content")
-        this.siteHeader = document.querySelector(".site-header")
+        this.menuIcon = document.querySelector(".site-header__menu-icon");
+        this.menuContent = document.querySelector(".site-header__menu-content");
+        this.siteHeader = document.querySelector(".site-header");
         this.events();
     }
 
